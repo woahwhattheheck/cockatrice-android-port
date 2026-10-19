@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="#10151C">
+    <!-- Do not initialize WebView while inflating the native startup screen. -->
+    <FrameLayout android:id="@+id/webContainer" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:layout_marginTop="44dp" android:visibility="gone" />
+    <ScrollView android:id="@+id/setup" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:fillViewport="true" android:background="#10151C">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:gravity="center" android:padding="28dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Cockatrice One Tap" android:textSize="28sp"
+                android:textColor="#F0F5FA" android:textStyle="bold" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Unofficial Android package · release candidate" android:textColor="#A6B4C3"
+                android:layout_marginTop="8dp" />
+            <TextView android:id="@+id/statusText" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="24dp"
+                android:text="Starting…" android:textColor="#FFFFFF" android:textSize="18sp"
+                android:gravity="center" />
+            <ProgressBar android:id="@+id/progress" style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:layout_marginTop="12dp" android:max="100" />
+            <TextView android:id="@+id/diagnostics" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:layout_marginTop="12dp"
+                android:textColor="#BAC8D6" android:textIsSelectable="true" android:textSize="13sp" />
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:orientation="horizontal" android:layout_marginTop="12dp">
+                <Button android:id="@+id/retry" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Try again" android:visibility="gone" />
+                <Button android:id="@+id/copyLog" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="Copy diagnostics" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:id="@+id/viewerTools" android:layout_width="wrap_content"
+        android:layout_height="40dp" android:layout_gravity="top|start" android:visibility="gone"
+        android:orientation="horizontal">
+        <Button android:id="@+id/showKeyboard" android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="Keyboard" android:textSize="11sp" android:minWidth="0dp" android:minHeight="0dp" />
+        <Button android:id="@+id/pasteText" android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="Paste" android:textSize="11sp" android:minWidth="0dp" android:minHeight="0dp" />
+        <Button android:id="@+id/viewerKeys" android:layout_width="wrap_content" android:layout_height="40dp"
+            android:text="Keys / Fit" android:textSize="11sp" android:minWidth="0dp" android:minHeight="0dp" />
+    </LinearLayout>
+    <Button android:id="@+id/openDiagnostics" android:layout_width="wrap_content"
+        android:layout_height="40dp" android:layout_gravity="top|end"
+        android:layout_margin="4dp" android:text="Diagnostics" android:textSize="11sp"
+        android:minHeight="0dp" android:minWidth="0dp" android:paddingHorizontal="12dp" />
+</FrameLayout>

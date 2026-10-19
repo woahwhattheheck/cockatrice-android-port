@@ -1,0 +1,12 @@
+session.screen0.toolbar.visible: false
+session.screen0.slit.autoHide: true
+session.screen0.focusModel: ClickFocus
+session.screen0.focusNewWindows: true
+session.screen0.fullMaximization: true
+session.screen0.workspaces: 1
+session.screen0.tabs.intitlebar: false
+session.screen0.rootCommand: /usr/bin/true
+session.appsFile: /opt/cockatrice/fluxbox/apps
+session.menuFile: /opt/cockatrice/fluxbox/menu
+session.styleFile: /usr/share/fluxbox/styles/Squared_for_Debian
+session.configVersion: 13
