@@ -11,7 +11,7 @@ applies; online play needs the usual internet connection and game-server account
 
 ## Status
 
-- Experimental RC4 lineage; ARM64 (`arm64-v8a`) and Android 8+ (`minSdk 26`).
+- Experimental RC5 fullscreen update; ARM64 (`arm64-v8a`) and Android 8+ (`minSdk 26`).
 - Native Android startup/display was confirmed working on an ARM64 phone.
 - The game executable is pinned to Cockatrice `3.0.0 (2026-05-08)`, source commit
   [`63143f9`](https://github.com/Cockatrice/Cockatrice/commit/63143f941643dc2f46f658cb51ea3b5727da3e56).
@@ -58,6 +58,8 @@ packaging defaults do not modify the executable or its game interface.
 The current virtual display is 1280×720 in landscape. Audio forwarding and
 Android Files import/export are not implemented. Uninstalling or clearing app
 data removes saved player data; an ordinary signed APK update preserves it.
+When the first game frame appears, Android status/navigation bars hide; swipe
+from an edge to reveal them temporarily. Startup and error screens keep the bars.
 
 ## Source layout
 
