@@ -8,7 +8,7 @@ repository does not relicense them or claim their authorship.
 ## Cockatrice
 
 - Upstream: <https://github.com/Cockatrice/Cockatrice>
-- Working source revision: `63143f941643dc2f46f658cb51ea3b5727da3e56`
+- Working source revision: [1m63143f941643dc2f46f658cb51ea3b5727da3e56[0m
 - Version reported by the pinned executable: `3.0.0 (2026-05-08)`
 - License: GNU GPL version 2; retain upstream notices and source license terms.
 - The packager does not patch or compile the game. Its exact executable identity
@@ -33,7 +33,7 @@ Generated APKs include selected Debian libraries/data and native PRoot support:
 binary hashes. The packager copies Debian copyright files into the runtime.
 It changes ELF search paths/one library filename in copied native support
 binaries so they can live in Android's installed native-library directory; it
-does not change their installed Termux originals.
+ does not change their installed Termux originals.
 
 Card/token databases are upstream data, not original Android-host code. Card
 names, rules text, trademarks and artwork have their own rights/provenance. The
@@ -45,6 +45,15 @@ accounts, shell history or private settings.
 The standard Gradle wrapper files retain their original notices and Apache
 License 2.0 terms. See `LICENSES/Apache-2.0.txt`. Android SDK/build tools and the
 Android Gradle plugin are external build dependencies, not vendored source here.
+
+## Published RC4 source
+
+The single-APK `v0.1.0-rc4` release is at
+<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc4>.
+Its version-matched Debian, Termux, Cockatrice, Android-host, and card/token data
+sources are in the companion
+<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc4-sources>.
+Verify the source archives with `Corresponding-Sources.sha256` in that release.
 
 ## Before distributing an APK
 
