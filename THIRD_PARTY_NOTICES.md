@@ -13,6 +13,9 @@ repository does not relicense them or claim their authorship.
 - License: GNU GPL version 2; retain upstream notices and source license terms.
 - The packager does not patch or compile the game. Its exact executable identity
   is pinned in `runtime/COCKATRICE.sha256`.
+- The Android app and notification icons use the upstream artwork
+  `cockatrice/resources/cockatrice.svg` and `cockatrice/resources/cockatrice.png`
+  from the pinned source revision.
 
 Cockatrice, its logo and its upstream resources belong to their respective
 rights holders. This is an unofficial Android packaging project, not an official

@@ -11,12 +11,13 @@ applies; online play needs the usual internet connection and game-server account
 
 ## Status
 
-- Experimental RC5 fullscreen update; ARM64 (`arm64-v8a`) and Android 8+ (`minSdk 26`).
+- Experimental RC6 official Cockatrice icon and fullscreen update; ARM64 (`arm64-v8a`) and Android 8+ (`minSdk 26`).
 - Native Android startup/display was confirmed working on an ARM64 phone.
 - The game executable is pinned to Cockatrice `3.0.0 (2026-05-08)`, source commit
   [`63143f9`](https://github.com/Cockatrice/Cockatrice/commit/63143f941643dc2f46f658cb51ea3b5727da3e56).
 - It is **not patched or rebuilt** by this project. Its required SHA-256 is in
   [`runtime/COCKATRICE.sha256`](runtime/COCKATRICE.sha256).
+- Android launcher and notification artwork uses the pinned upstream Cockatrice logo.
 - Multiplayer, long sessions, and the full deck workflow still need broader
   real-world use. Do not treat this as an official or stable Cockatrice release.
 

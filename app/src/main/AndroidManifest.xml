@@ -8,6 +8,7 @@
         android:allowBackup="false"
         android:label="Cockatrice One Tap"
         android:icon="@drawable/ic_cockatrice"
+        android:roundIcon="@drawable/ic_cockatrice"
         android:extractNativeLibs="true"
         android:usesCleartextTraffic="false"
         android:theme="@android:style/Theme.Material.NoActionBar">
