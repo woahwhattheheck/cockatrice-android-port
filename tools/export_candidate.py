@@ -61,7 +61,7 @@ def export(args):
     version = re.search(r"versionName='([^']+)'", badging).group(1)
     output = PROJECT / 'dist'
     output.mkdir(exist_ok=True)
-    name = f'Cockatrice-Android-Port-{version}-arm64.apk'
+    name = f'Cockatrice-Mobile-{version}-arm64.apk'
     target = output / name
     checksum = sha256(apk)
     require(not target.exists() or sha256(target) == checksum,

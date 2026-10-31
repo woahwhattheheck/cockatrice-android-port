@@ -10,7 +10,7 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
             android:orientation="vertical" android:gravity="center" android:padding="28dp">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="Cockatrice One Tap" android:textSize="28sp"
+                android:text="Cockatrice Mobile" android:textSize="28sp"
                 android:textColor="#F0F5FA" android:textStyle="bold" />
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="Unofficial Android package · release candidate" android:textColor="#A6B4C3"

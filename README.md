@@ -1,4 +1,4 @@
-# Cockatrice Android Port
+# Cockatrice Mobile
 
 An **unofficial, self-contained Android host for unmodified Cockatrice**, with a
 native framebuffer viewer. This is a packaging/launcher project, not a rewrite
@@ -11,7 +11,7 @@ applies; online play needs the usual internet connection and game-server account
 
 ## Status
 
-- Experimental RC6 official Cockatrice icon and fullscreen update; ARM64 (`arm64-v8a`) and Android 8+ (`minSdk 26`).
+- Experimental RC7 Cockatrice Mobile name, official-icon, and fullscreen update; ARM64 (`arm64-v8a`) and Android 8+ (`minSdk 26`).
 - Native Android startup/display was confirmed working on an ARM64 phone.
 - The game executable is pinned to Cockatrice `3.0.0 (2026-05-08)`, source commit
   [`63143f9`](https://github.com/Cockatrice/Cockatrice/commit/63143f941643dc2f46f658cb51ea3b5727da3e56).

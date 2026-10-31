@@ -49,15 +49,15 @@ The standard Gradle wrapper files retain their original notices and Apache
 License 2.0 terms. See `LICENSES/Apache-2.0.txt`. Android SDK/build tools and the
 Android Gradle plugin are external build dependencies, not vendored source here.
 
-## Published RC5 source
+## Published RC7 source
 
-The single-APK `v0.1.0-rc5` release is at
-<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc5>.
+The single-APK `v0.1.0-rc7` release is at
+<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc7>.
 Its Android-host source snapshot is in the companion
-<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc5-sources>.
-RC5's runtime ZIP is unchanged from RC4. Its version-matched Debian, Termux,
+<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc7-sources>.
+RC7's runtime ZIP is unchanged from RC6. Its version-matched Debian, Termux,
 Cockatrice, and card/token data sources remain in
-<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc4-sources>.
+<https://github.com/woahwhattheheck/cockatrice-android-port/releases/tag/v0.1.0-rc6-sources>.
 Verify source archives with their `Corresponding-Sources.sha256` files.
 
 ## Before distributing an APK

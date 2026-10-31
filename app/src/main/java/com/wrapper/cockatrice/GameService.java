@@ -94,7 +94,7 @@ public final class GameService extends Service {
         record("Android display host: " + safe.substring(0, Math.min(safe.length(), 4000)));
     }
     public synchronized String diagnostics() {
-        return "Cockatrice One Tap " + BuildConfig.VERSION_NAME + "\nAndroid " + Build.VERSION.RELEASE
+        return "Cockatrice Mobile " + BuildConfig.VERSION_NAME + "\nAndroid " + Build.VERSION.RELEASE
                 + " / API " + Build.VERSION.SDK_INT + " / " + Arrays.toString(Build.SUPPORTED_ABIS)
                 + "\n" + snapshot.message + "\n\n" + log;
     }
@@ -126,7 +126,7 @@ public final class GameService extends Service {
     private Notification notification(String text) {
         PendingIntent open = PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         PendingIntent stop = PendingIntent.getService(this, 1, new Intent(this, GameService.class).setAction(STOP), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-        return new Notification.Builder(this, CHANNEL).setContentTitle("Cockatrice One Tap")
+        return new Notification.Builder(this, CHANNEL).setContentTitle("Cockatrice Mobile")
                 .setContentText(text).setSmallIcon(R.drawable.ic_notification).setContentIntent(open)
                 .setOngoing(true).setOnlyAlertOnce(true)
                 .addAction(new Notification.Action.Builder(null, "Stop", stop).build()).build();

@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
     <application
         android:allowBackup="false"
-        android:label="Cockatrice One Tap"
+        android:label="Cockatrice Mobile"
         android:icon="@drawable/ic_cockatrice"
         android:roundIcon="@drawable/ic_cockatrice"
         android:extractNativeLibs="true"

@@ -18,7 +18,7 @@ subprocess.run(['keytool', '-genkeypair', '-noprompt', '-keystore', str(keystore
                 '-storetype', 'JKS', '-storepass:env', 'COCKATRICE_SIGNING_PASSWORD',
                 '-keypass:env', 'COCKATRICE_SIGNING_PASSWORD', '-alias', 'onetap',
                 '-keyalg', 'RSA', '-keysize', '3072', '-validity', '10000',
-                '-dname', 'CN=Cockatrice One Tap Unofficial'], env=environment, check=True)
+                '-dname', 'CN=Cockatrice Mobile Unofficial'], env=environment, check=True)
 keystore.chmod(0o600)
 properties.write_text('storeFile=signing/onetap.jks\nkeyAlias=onetap\n'
                       f'storePassword={password}\nkeyPassword={password}\n')
