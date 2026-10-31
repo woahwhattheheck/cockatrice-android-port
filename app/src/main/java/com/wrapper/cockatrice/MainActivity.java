@@ -17,6 +17,9 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -40,6 +43,7 @@ public class MainActivity extends Activity {
     private GameService.DisplaySession display;
     private boolean bound;
     private boolean firstFrame;
+    private boolean gameImmersive;
     private int generation;
     private final GameService.Listener listener = snapshot -> runOnUiThread(() -> render(snapshot));
     private final ServiceConnection connection = new ServiceConnection() {
@@ -57,6 +61,7 @@ public class MainActivity extends Activity {
     @Override public void onCreate(Bundle state) {
         super.onCreate(state);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        setGameImmersive(false);
         setContentView(R.layout.activity_main);
         displayContainer = findViewById(R.id.webContainer);
         setup = findViewById(R.id.setup);
@@ -117,6 +122,7 @@ public class MainActivity extends Activity {
             if (snapshot.display != display) { display = snapshot.display; openDisplay(display); }
             return;
         }
+        setGameImmersive(false);
         status.setText(snapshot.message);
         progress.setIndeterminate(snapshot.percent < 0);
         if (snapshot.percent >= 0) progress.setProgress(snapshot.percent);
@@ -130,6 +136,7 @@ public class MainActivity extends Activity {
 
     private void openDisplay(GameService.DisplaySession session) {
         if (isFinishing() || isDestroyed()) return;
+        setGameImmersive(false);
         closeDisplay();
         final int current = ++generation;
         firstFrame = false;
@@ -145,6 +152,7 @@ public class MainActivity extends Activity {
             @Override public void firstFrame() {
                 if (current != generation || isDestroyed()) return;
                 firstFrame = true;
+                setGameImmersive(true);
                 setup.setVisibility(View.GONE);
                 viewerTools.setVisibility(View.VISIBLE);
                 displayContainer.setVisibility(View.VISIBLE);
@@ -181,6 +189,7 @@ public class MainActivity extends Activity {
 
     private void showError(String message) {
         if (isFinishing() || isDestroyed()) return;
+        setGameImmersive(false);
         hostEvent(message);
         status.setText(message);
         diagnostics.setText(allDiagnostics());
@@ -190,6 +199,41 @@ public class MainActivity extends Activity {
         setup.setVisibility(View.VISIBLE);
         displayContainer.setVisibility(View.GONE);
         viewerTools.setVisibility(View.GONE);
+    }
+
+    private void setGameImmersive(boolean immersive) {
+        if (gameImmersive == immersive) return;
+        gameImmersive = immersive;
+        applySystemBars(immersive);
+    }
+
+    private void applySystemBars(boolean immersive) {
+        Window window = getWindow();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.setDecorFitsSystemWindows(!immersive);
+            WindowInsetsController controller = window.getInsetsController();
+            if (controller == null) return;
+            controller.setSystemBarsBehavior(WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
+            int bars = WindowInsets.Type.statusBars() | WindowInsets.Type.navigationBars();
+            if (immersive) controller.hide(bars); else controller.show(bars);
+            return;
+        }
+
+        int flags = View.SYSTEM_UI_FLAG_VISIBLE;
+        if (immersive) {
+            flags = View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION;
+        }
+        window.getDecorView().setSystemUiVisibility(flags);
+    }
+
+    @Override public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus && gameImmersive) applySystemBars(true);
     }
 
     private void copyDiagnostics() {
