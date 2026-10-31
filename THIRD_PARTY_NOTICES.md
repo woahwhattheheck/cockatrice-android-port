@@ -8,7 +8,7 @@ repository does not relicense them or claim their authorship.
 ## Cockatrice
 
 - Upstream: <https://github.com/Cockatrice/Cockatrice>
-- Working source revision: [1m63143f941643dc2f46f658cb51ea3b5727da3e56[0m
+- Working source revision: `63143f941643dc2f46f658cb51ea3b5727da3e56`
 - Version reported by the pinned executable: `3.0.0 (2026-05-08)`
 - License: GNU GPL version 2; retain upstream notices and source license terms.
 - The packager does not patch or compile the game. Its exact executable identity
@@ -33,7 +33,7 @@ Generated APKs include selected Debian libraries/data and native PRoot support:
 binary hashes. The packager copies Debian copyright files into the runtime.
 It changes ELF search paths/one library filename in copied native support
 binaries so they can live in Android's installed native-library directory; it
- does not change their installed Termux originals.
+does not change their installed Termux originals.
 
 Card/token databases are upstream data, not original Android-host code. Card
 names, rules text, trademarks and artwork have their own rights/provenance. The
